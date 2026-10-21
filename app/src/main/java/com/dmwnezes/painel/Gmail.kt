@@ -60,8 +60,8 @@ fun lerEmail(json: String): Email {
 
 // "Fulano de Tal <fulano@x.com>" -> "Fulano de Tal"; só o e-mail -> parte antes do @.
 fun nomeRemetente(de: String): String {
-    val nome = de.substringBefore('<').trim().trim('"')
-    return nome.ifBlank { de.trim('<', '>', ' ').substringBefore('@') }
+    val nome = if ('<' in de) de.substringBefore('<').trim().trim('"') else ""
+    return nome.ifBlank { de.trim('<', '>', ' ').substringAfter('<').substringBefore('@') }
 }
 
 private fun desfazerEntidades(s: String) = s
