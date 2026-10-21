@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
+    <!-- Atalhos: o Android 11+ só deixa abrir outro app se ele estiver listado aqui. -->
+    <queries>
+        <package android:name="com.dmwnezes.palavreiro" />
+        <package android:name="com.dmwnezes.matine" />
+        <package android:name="com.dmwnezes.leao" />
+        <package android:name="com.dmwnezes.estante" />
+        <package android:name="com.dmwnezes.sintonia" />
+        <package android:name="com.dmwnezes.soberano" />
+    </queries>
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="Painel"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

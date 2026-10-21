@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Grade de blocos de vidro: cada bloco no tom de uma seção (clima, e-mails, Fortaleza, games). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp" android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#B3FFD43B" android:pathData="M42,32h8a6,6 0 0 1 6,6v8a6,6 0 0 1 -6,6h-8a6,6 0 0 1 -6,-6v-8a6,6 0 0 1 6,-6z" />
+    <path android:fillColor="#B34C6EF5" android:pathData="M64,32h2a6,6 0 0 1 6,6v8a6,6 0 0 1 -6,6h-2a6,6 0 0 1 -6,-6v-8a6,6 0 0 1 6,-6z" />
+    <path android:fillColor="#B3F03E3E" android:pathData="M42,56h24a6,6 0 0 1 6,6v8a6,6 0 0 1 -6,6h-24a6,6 0 0 1 -6,-6v-8a6,6 0 0 1 6,-6z" />
+</vector>
