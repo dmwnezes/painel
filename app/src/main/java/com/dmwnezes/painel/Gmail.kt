@@ -18,12 +18,12 @@ sealed interface Acesso {
     data class PrecisaLogin(val tela: PendingIntent) : Acesso
 }
 
-private val pedido = AuthorizationRequest.builder()
-    .setRequestedScopes(listOf(Scope("https://www.googleapis.com/auth/gmail.readonly")))
-    .build()
-
 // O Google casa o app com o cliente OAuth Android pelo nome do pacote + SHA-1 da chave; não há ID no código.
 suspend fun pedirAcessoGmail(activity: Activity): Acesso {
+    // Montado aqui, não no topo do arquivo: as classes do Google Play não existem nos testes de JVM.
+    val pedido = AuthorizationRequest.builder()
+        .setRequestedScopes(listOf(Scope("https://www.googleapis.com/auth/gmail.readonly")))
+        .build()
     val r = Identity.getAuthorizationClient(activity).authorize(pedido).await()
     val tela = r.pendingIntent
     return if (r.hasResolution() && tela != null) Acesso.PrecisaLogin(tela) else Acesso.Token(r.accessToken!!)
